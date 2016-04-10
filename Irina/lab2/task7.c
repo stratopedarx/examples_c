@@ -5,7 +5,7 @@
 
 int main()
 {
-	int i;
+	int i, j;
 	unsigned char mirr[SIZE];
 	unsigned int arr[SIZE];
 	
@@ -14,11 +14,12 @@ int main()
 
 	fgets(mirr, SIZE, stdin);
 	
-	for (i = 0; i != '\n'; i++)
-	{
+	j = strlen(mirr);
+	mirr[j-1] = '\0';
+		
+	for (i = 0; i < strlen(mirr); i++)
 		++arr[mirr[i]];
-	}
-
+	
 	for (i = 0; i < SIZE; ++i){
 		if (arr[i] == 0)
 			continue;
